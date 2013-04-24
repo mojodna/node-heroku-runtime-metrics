@@ -1,0 +1,16 @@
+{
+  "name": "heroku-runtime-metrics",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "request": "~2.16.6",
+    "metricsd": "~0.1.4"
+  }
+}
