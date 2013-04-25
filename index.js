@@ -73,10 +73,9 @@ var processLogs = function(app) {
                   status: data["status"][0] + "xx"
                 };
 
-                // TODO app name
-                metrics.updateHistogram("connect", metric.connect);
-                metrics.updateHistogram("service", metric.service);
-                metrics.mark("status." + metric.status);
+                metrics.updateHistogram(util.format("%s.connect", app), metric.connect);
+                metrics.updateHistogram(util.format("%s.service", app), metric.service);
+                metrics.mark(util.format("%s.status.%s", app, metric.status));
               } else if (ps === "web") {
                 if (data["measure"] && data["val"]) {
                   var val = +data["val"];
@@ -92,7 +91,7 @@ var processLogs = function(app) {
 
                   metric[data["measure"]] = Math.round(val);
 
-                  metrics.updateGauge(data["measure"], Math.round(val));
+                  metrics.updateGauge(util.format("%s.%s", app, data["measure"]), Math.round(val));
                 } else {
                   console.log(line);
                 }
