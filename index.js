@@ -9,6 +9,7 @@ var metricsd = require("metricsd"),
     }),
     request = require("request");
 
+var DEBUG = process.env.DEBUG;
 var HEROKU_API_KEY = process.env.HEROKU_API_KEY;
 
 // TODO extract this into lib/
@@ -93,13 +94,17 @@ var processLogs = function(app) {
 
                   metrics.updateGauge(util.format("%s.%s", app, data["measure"]), Math.round(val));
                 } else {
-                  console.log(line);
+                  if (DEBUG) {
+                    console.log(line);
+                  }
                 }
               }
 
               if (Object.keys(metric).length > 0) {
                 metric["timestamp"] = ~~(Date.parse(matches[1]) / 1000);
-                console.log("metric:", metric);
+                if (DEBUG) {
+                  console.log("metric:", metric);
+                }
               }
             }
           });
