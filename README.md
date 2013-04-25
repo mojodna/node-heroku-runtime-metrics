@@ -8,7 +8,7 @@ metricsd.
 * `METRICSD_HOST` - metricsd hostname
 * `METRICSD_PORT` - metricsd port
 * `METRICSD_PREFIX` - metricsd prefix
-* `API_TOKEN` - Heroku API token
+* `HEROKU_API_KEY` - Heroku API key
 * `APPS` - space-delimited list of Heroku apps to track
 
 ## TODO

@@ -9,7 +9,7 @@ var metricsd = require("metricsd"),
     }),
     request = require("request");
 
-var API_TOKEN = process.env.API_TOKEN;
+var HEROKU_API_KEY = process.env.HEROKU_API_KEY;
 
 // TODO extract this into lib/
 var processLogs = function(app) {
@@ -17,7 +17,7 @@ var processLogs = function(app) {
     url: util.format("https://api.heroku.com/apps/%s/logs?logplex=true&tail=1", app),
     auth: {
       user: "_",
-      pass: API_TOKEN
+      pass: HEROKU_API_KEY
     }
   }, function(err, rsp, body) {
     if (err) {
