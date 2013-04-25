@@ -13,7 +13,7 @@ metricsd.
 
 ## Running Locally
 
-Either provide the above in your environment and run `npm start` or add
+Either provide the above in your environment and run `node index.js` or add
 a `.env` and start with `foreman start`.
 
 To see what values are being set, set `METRICSD_HOST` to `localhost` and run
