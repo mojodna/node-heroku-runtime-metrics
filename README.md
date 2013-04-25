@@ -11,6 +11,14 @@ metricsd.
 * `HEROKU_API_KEY` - Heroku API key
 * `APPS` - space-delimited list of Heroku apps to track
 
+## Running Locally
+
+Either provide the above in your environment and run `npm start` or add
+a `.env` and start with `foreman start`.
+
+To see what values are being set, set `METRICSD_HOST` to `localhost` and run
+`while true; do nc -l -u -w 0 8125; done`.
+
 ## TODO
 
 * Write gauge values directly to Graphite (to avoid ghost values, which are
