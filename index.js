@@ -1,5 +1,10 @@
 "use strict";
 
+if (!process.env.HEROKU_API_KEY || !process.env.APPS) {
+  console.error("Please provide HEROKU_API_KEY and APPS.");
+  process.exit(1);
+}
+
 var util = require("util");
 var metricsd = require("metricsd"),
     metrics = metricsd({
