@@ -115,7 +115,7 @@ var processLogs = function(app) {
           });
         }).on("end", function() {
           console.log("Stream ended; reconnecting...");
-          processLogs();
+          processLogs(app);
         }).on("error", function(err) {
           console.error(err);
         });
