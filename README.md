@@ -3,6 +3,8 @@
 I am a worker app that consumes Heroku log streams and emits metrics to
 metricsd.
 
+See also [Heroku Logging](https://devcenter.heroku.com/articles/logging).
+
 ## Environment Variables
 
 * `METRICSD_HOST` - metricsd hostname
