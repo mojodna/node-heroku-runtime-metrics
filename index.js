@@ -97,7 +97,7 @@ var processLogs = function(app) {
 
                   metric[data["measure"]] = Math.round(val);
 
-                  // metrics.updateGauge(util.format("%s.%s", app, data["measure"]), Math.round(val));
+                  metrics.updateGauge(util.format("%s.%s", app, data["measure"]), Math.round(val));
                   metrics.updateHistogram(util.format("%s.%s", app, data["measure"]), Math.round(val));
                 } else {
                   if (DEBUG) {
