@@ -1,4 +1,4 @@
-# node-heroku-metricsd-shim
+# node-heroku-metricsd-bridge
 
 I am a worker app that consumes Heroku log streams and emits metrics to
 metricsd.
