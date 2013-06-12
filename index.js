@@ -74,8 +74,8 @@ var processLogs = function(app) {
 
               if (ps === "router") {
                 metric = {
-                  connect: +(data["connect"].slice(0, -2)),
-                  service: +(data["service"].slice(0, -2)),
+                  connect: +((data["connect"] || "").slice(0, -2)),
+                  service: +((data["service"] || "").slice(0, -2)),
                   status: data["status"][0] + "xx"
                 };
 
